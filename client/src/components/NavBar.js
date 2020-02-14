@@ -12,7 +12,7 @@ export const NavBar = () => {
 
         return(
             <div>
-                <button onClick={toggle}>Push Me</button>
+                <button data-testid="button-change" className='btn' onClick={toggle}>Push Me</button>
             </div>
         )
 }
