@@ -1,26 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios'
 
-function App() {
+import { NavBar } from './components/NavBar'
+import { PlayersOnScreen } from './components/PlayersOnScreen'
+
+
+class App extends React.Component {
+constructor(){
+  super()
+  this.state = {
+    playersData: []
+  }
+}
+
+// Called api of players and set fetched data to the state
+componentDidMount() {
+  axios.get(`http://localhost:5000/api/players`)
+  .then(res => {
+    console.log(`Success! you got data in you app.js`,res.data)
+    this.setState({playersData: res.data})
+  })
+  .catch(err => {
+    console.log(`Error, try again in your app.js`,err)
+  })
+}
+
+
+
+  render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Players!</h1>
+      <NavBar/>
+      <div>
+        {this.state.playersData.map((players) => {
+          console.log(players)
+          return <PlayersOnScreen key={players.id} players={players}/>
+        })}
+      </div>    
     </div>
   );
+}
 }
 
 export default App;

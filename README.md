@@ -22,10 +22,24 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit the `ANSWERS.md` file to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] Why would you use class component over function components (removing hooks from the question)?
-- [ ] Name three lifecycle methods and their purposes.
-- [ ] What is the purpose of a custom hook?
-- [ ] Why is it important to test our apps?
+        1. Why would you use class component over function components 
+		(removing hooks from the question)?
+
+         A: Only reason I could think of at the top of my head is that you have more control over state in class components but I’m not exactly sure in what way, other than that, the syntax is the only difference.
+
+		 2. Name three lifecycle methods and their purposes.
+
+         A:Mounting - render, Updating - manipulate state, and Unmounting - commit phase
+
+		 3. What is the purpose of a custom hook?
+
+         A: A custom hooks purpose is to be a reusable piece
+		of stateful logic. 
+
+		 4. Why is it important to test our apps?
+
+         A: So we feel confidence in our code when we are ready to send to production. Also allows us to find errors with the code.
+
 
 ## Project Set Up
 
