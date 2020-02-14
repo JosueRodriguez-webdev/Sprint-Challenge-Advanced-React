@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
-
 import axios from 'axios'
+
+import { PlayersOnScreen } from './components/PlayersOnScreen'
+
 
 class App extends React.Component {
 constructor(){
@@ -11,6 +13,7 @@ constructor(){
   }
 }
 
+// Called api of players and set fetched data to the state
 componentDidMount() {
   axios.get(`http://localhost:5000/api/players`)
   .then(res => {
