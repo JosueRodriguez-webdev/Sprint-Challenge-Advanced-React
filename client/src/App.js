@@ -30,7 +30,11 @@ componentDidMount() {
   render() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <h1>Players!</h1>
+      {this.state.playersData.map((players) => {
+        console.log(players)
+        return <PlayersOnScreen key={players.id} players={players}/>
+      })}
     </div>
   );
 }

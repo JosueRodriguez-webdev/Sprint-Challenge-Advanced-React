@@ -1,8 +1,13 @@
 import React from 'react'
 
-export const PlayersOnScreen = () => {
+export const PlayersOnScreen = ({ players }) => {
+    const { name, country } = players
 
     return(
-        <div>Hello</div>
+        <div>
+                <p>{name}</p>
+                <p>{country}</p>
+        </div>
+
     )
 }
