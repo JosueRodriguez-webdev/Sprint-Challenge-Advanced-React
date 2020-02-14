@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import axios from 'axios'
 
+import { NavBar } from './components/NavBar'
 import { PlayersOnScreen } from './components/PlayersOnScreen'
 
 
@@ -31,10 +32,13 @@ componentDidMount() {
   return (
     <div className="App">
       <h1>Players!</h1>
-      {this.state.playersData.map((players) => {
-        console.log(players)
-        return <PlayersOnScreen key={players.id} players={players}/>
-      })}
+      <NavBar/>
+      <div>
+        {this.state.playersData.map((players) => {
+          console.log(players)
+          return <PlayersOnScreen key={players.id} players={players}/>
+        })}
+      </div>    
     </div>
   );
 }
